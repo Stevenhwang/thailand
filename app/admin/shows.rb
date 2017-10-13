@@ -12,5 +12,14 @@ ActiveAdmin.register Show do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+  permit_params :title, :text, :excerpt
 
+  form do |f|
+    f.inputs "泰国表演详情" do
+      f.input :title, label: "标题"
+      f.input :excerpt, label: "简介"
+      f.input :text, label: "内容"
+    end
+    f.actions
+  end
 end

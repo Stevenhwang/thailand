@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171012091138) do
+ActiveRecord::Schema.define(version: 20171013051931) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20171012091138) do
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "excerpt"
   end
 
   create_table "admin_users", force: :cascade do |t|
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(version: 20171012091138) do
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "excerpt"
   end
 
   create_table "parties", force: :cascade do |t|
@@ -62,6 +64,7 @@ ActiveRecord::Schema.define(version: 20171012091138) do
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "excerpt"
   end
 
   create_table "shows", force: :cascade do |t|
@@ -69,6 +72,7 @@ ActiveRecord::Schema.define(version: 20171012091138) do
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "excerpt"
   end
 
   create_table "travels", force: :cascade do |t|
@@ -80,6 +84,7 @@ ActiveRecord::Schema.define(version: 20171012091138) do
     t.text "instruction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "destination"
   end
 
 end

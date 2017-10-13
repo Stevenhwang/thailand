@@ -12,5 +12,18 @@ ActiveAdmin.register Travel do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+  permit_params :title, :price, :departure, :destination, :introduction, :notice, :instruction
 
+  form do |f|
+    f.inputs "特色旅游详情" do
+      f.input :title, label: "标题"
+      f.input :price, label: "价格"
+      f.input :departure, label: "出发地"
+      f.input :destination, label: "目的地"
+      f.input :introduction, label: "行程介绍"
+      f.input :notice, label: "预定须知"
+      f.input :instruction, label: "签证说明"
+    end
+    f.actions
+  end
 end

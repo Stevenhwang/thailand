@@ -7,16 +7,16 @@
             <div class="main">
                 <div class="m-section">
                     <div class="section-heading">
-                        <div class="breadcrumb"><i class="icon icon-home"></i><a href="index.html">首页</a> &gt; <span>特色旅游</span></div>
+                        <div class="breadcrumb"><i class="icon icon-home"></i><a href="index">首页</a> &gt; <span>特色旅游</span></div>
                         <h2 class="section-title"><i class="icon icon-travel"></i>特色旅游</h2>
                     </div>
                     <div class="section-content">
                         <div class="travel-details">
-                            <h3 class="travel-title">广州出发泰国普吉PP岛+帝王岛欢畅5天4晚跟团游</h3>
+                            <h3 class="travel-title"><%= @travel.title %></h3>
                             <div class="travel-overview">
                                 <div class="travel-picture">
-                                    <img src="img/travel_p11.jpg" alt="" class="picture">
-                                    <img src="img/travel_rec.png" alt="" class="rec">
+                                    <img src="/img/travel_p11.jpg" alt="" class="picture">
+                                    <img src="/img/travel_rec.png" alt="" class="rec">
                                 </div>
                                 <div class="travel-itinerary">
                                     <span class="itinerary-date">2017年05月</span>
@@ -70,8 +70,8 @@
                                         </div>
                                     </div>
                                     <div class="itinerary-info">
-                                        <p>合计费用：<span class="price">¥<em>2999.0</em></span></p>
-                                        <p>出发地点：广州</p>
+                                        <p>合计费用：<span class="price">¥<em><%= @travel.price %></em></span></p>
+                                        <p>出发地点：<%= @travel.departure %></p>
                                     </div>
                                     <a href="javascript:;" class="btn btn-primary btn-book"><i class="icon icon-headset"></i>联系客服预定</a>
                                 </div>
@@ -86,7 +86,7 @@
                                     <div class="travel-part" id="travel-part-1">
                                         <h4>行程介绍</h4>
                                         <div class="travel-line">
-                                            <i class="icon icon-square"></i>旅游线路：<span class="flight-line">广州 <i class="icon icon-aircraft"></i> 普吉</span>
+                                            <i class="icon icon-square"></i>旅游线路：<span class="flight-line"> <%= @travel.departure %> <i class="icon icon-aircraft"></i> <%= @travel.destination %> </span>
                                         </div>
                                         <div class="travel-reference">
                                             <i class="icon icon-square"></i>参考行程：
@@ -160,17 +160,11 @@
                                     </div>
                                     <div class="travel-part" id="travel-part-2">
                                         <h4>预定须知</h4>
-                                        <p>【成团人数】 此旅游费用基于参团人数超过10人以上，低于此人数标准，成本将发生变化，旅游费用则需重新计算.如团队人数超过15人，提供1名随团领队的增值服务.</p>
-                                        <p>【行程及价格】 行程中所列航班时间，及行程旅游顺序仅供参考，将根据实际情况做出适当的调整.本社保留因实际情况变化，对该行程及价格做适当调整的权利.观光项目以当地旅行社安排顺序为准.本社保留因实际情况变化,对该行程及价格作适当调整的权利.</p>
-                                    </div>
+                                        <p><%= @travel.notice %></p>
+                                      </div>
                                     <div class="travel-part" id="travel-part-3">
                                         <h4>签证说明</h4>
-                                        <p>签证所需提供的资料：</p>
-                                        <p>1. 护照原件（须有半年以上<190>有效期及足够的签证空白页）；</p>
-                                        <p>2. 半年内的近期2寸彩色照片二张（白/蓝底彩照）；</p>
-                                        <p>3. 护照原件（请确认护照有效期在回国后至少还有半年有效期，并确保有足够的签证页），如护照有破损，请及时更换。</p>
-                                        <p>4. 半年内的近期大一寸免冠彩照2张（蓝底或是白底），如客人护照上有“DT”或其他省份签发护照（广东、海南两省签发除外），须送外省办理签证，价格另询。</p>
-                                        <p>5. 建议预留7个工作日以上时间提前做签证。</p>
+                                        <p><%= @travel.instruction %></p>
                                     </div>
                                 </div>
                             </div>

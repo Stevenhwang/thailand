@@ -7,32 +7,26 @@
             <div class="main">
                 <div class="m-section">
                     <div class="section-heading">
-                        <div class="breadcrumb"><i class="icon icon-home"></i><a href="index.html">首页</a> &gt; <span>美食购物</span></div>
+                        <div class="breadcrumb"><i class="icon icon-home"></i><a href="index">首页</a> &gt; <span>美食购物</span></div>
                         <h2 class="section-title"><i class="icon icon-shopping"></i>美食购物</h2>
                     </div>
                     <div class="section-content">
                         <div class="m-article">
-                            <h3 class="article-title">泰安逸，轻奢华——甲米、清迈双城度假游</h3>
+                            <h3 class="article-title"><%= @food.title %></h3>
                             <div class="article-other">
                                 <div class="pull-right article-operation">
                                     <a href="javascript:;" class="article-fav"><i class="icon icon-fav"></i>收藏</a>
                                     <a href="javascript:;" class="article-share"><i class="icon icon-share"></i>分享</a>
                                 </div>
                                 <div class="pull-left article-info">
-                                    <span class="article-date"><i class="icon icon-pen"></i>2017-05-04</span>
+                                    <span class="article-date"><i class="icon icon-pen"></i><%= @food.created_at %></span>
                                     <span class="article-view"><i class="icon icon-view"></i>3672</span>
                                 </div>
                             </div>
                             <div class="article-content">
-                                <p><img src="img/shopping_p11.jpg" alt=""></p>
-                                <p>芭提雅的夜晚作为泰国的红灯区代名词，但却不只红灯区这么简单。真理寺就是这次的一个大发现。</p>
-                                <p>走走停停，竟发现了真理寺。感觉这里是芭提雅最美的地方，也是泰国最大的木结构建筑。已建造了30余年，至今仍未完工。寺庙全源自手工雕刻，分四个部分讲述了宇宙缘起、生命诞生、现世哲学和死后世界，据说不管何时来，都能看见几位老工匠在雕刻。</p>
-                                <p>格兰岛，距离芭提雅最近的岛，而月光岛是格兰岛附属的岛屿之一。如果说芭提雅是度假者的圣地，那月光岛一定是运动爱好者的天堂。这里主要以水上运动为主，橡皮艇、快艇等等，水质还不错，可以下海游泳。这里人气很旺，很难拍出人少的场景。</p>
-                                <p><img src="img/shopping_p22.jpg" alt=""></p>
-                                <p>白天的芭提雅是沉睡的，入夜才开始活跃起来，到了午夜才进入状态进入高峰，不过，虽说这里是因色情行业而出名，但不代表这里只有色情，各种餐吧、音乐吧、商铺与红灯区开在同一条街道中，也许，这种情况只能发生在芭提雅，发生在这里最著名的Walking Street。</p>
-                                <p>强烈推荐步行街中段的BLUE SKY STATION音乐酒吧，路过时听到了里面的驻场歌手在唱Helloween乐队的Forever and One，本身我也超爱这首歌，就坐下点了酒听了很久，几个歌手都唱的非常不错，酒吧氛围非常好，酒水价格合理，没有拉客现象。</p>
-                                <p>这家店无须多说，本身在泰国就很有名气了，1998年品牌创立，多开在豪华五星级酒店里，坐落在繁华市中心，环境一流、手法一流、服务一流，价格相对国内也是非常实惠，1小时的泰式按摩120CNY，可选的项目很多，在泰国很多城市都有分店。</p>
-                                <p>开业30余年的老店，从不接旅行团生意，就在泰迪熊博物馆旁边的巷子里，餐厅很大，但是人很少，味道非常好。</p>
+                                <p><img src="/img/shopping_p11.jpg" alt=""></p>
+                                <p><img src="/img/shopping_p22.jpg" alt=""></p>
+                                <p><%= @food.text %></p>
                             </div>
                         </div>
                     </div>

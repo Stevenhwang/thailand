@@ -5,11 +5,11 @@
     <div class="banner">
         <div class="focus-slide" id="focus-slide">
             <ul class="banner-list">
-                <li style="background-image:url(img/focus_banner.jpg);"></li>
-                <li style="background-image:url(img/focus_banner.jpg);"></li>
-                <li style="background-image:url(img/focus_banner.jpg);"></li>
-                <li style="background-image:url(img/focus_banner.jpg);"></li>
-                <li style="background-image:url(img/focus_banner.jpg);"></li>
+                <li style="background-image:url(/img/focus_banner.jpg);"></li>
+                <li style="background-image:url(/img/focus_banner.jpg);"></li>
+                <li style="background-image:url(/img/focus_banner.jpg);"></li>
+                <li style="background-image:url(/img/focus_banner.jpg);"></li>
+                <li style="background-image:url(/img/focus_banner.jpg);"></li>
             </ul>
         </div>
     </div>
@@ -17,15 +17,12 @@
         <div class="layout">
             <dl>
                 <dt>
-                    <i class="icon icon-weather"></i>泰国主要城市天气<span class="time">2017/03/25 22:16:38</span>
+                    <i class="icon icon-weather"></i>泰国主要城市天气<span class="time"><%= Time.now %></span>
                 </dt>
                 <dd>
-                    <span class="city">曼谷：晴 &nbsp; 22℃~28℃</span>
-                    <span class="city">芭提雅：晴 &nbsp; 22℃~28℃</span>
-                    <span class="city">普吉岛：晴 &nbsp; 22℃~28℃</span>
-                    <span class="city">苏梅岛：晴 &nbsp; 22℃~28℃</span>
-                    <span class="city">甲米：晴 &nbsp; 22℃~28℃</span>
-                    <span class="city">皮皮岛：晴 &nbsp; 22℃~28℃</span>
+                    <span class="city"><iframe width="225" scrolling="no" height="50" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=8&color=%23FFFFFF&bdc=%23&icon=1&py=bangkok&num=1&nid=130&wid=1300016&site=12"></iframe></span>
+                    <span class="city"><iframe width="225" scrolling="no" height="50" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=8&color=%23FFFFFF&bdc=%23&icon=1&py=phuket&num=1&nid=130&wid=1430016&site=12"></iframe></span>
+                    <span class="city"><iframe width="225" scrolling="no" height="50" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=8&color=%23FFFFFF&bdc=%23&icon=1&py=ko-samui&num=1&nid=130&wid=1300030&site=12"></iframe></span>
                 </dd>
             </dl>
         </div>
@@ -35,109 +32,110 @@
             <div class="main">
                 <div class="m-section">
                     <div class="section-heading">
-                        <a href="特色旅游.html" class="section-more">查看全部特色旅游</a>
+                        <a href="travels" class="section-more">查看全部特色旅游</a>
                         <h2 class="section-title"><i class="icon icon-travel"></i>特色旅游</h2>
                     </div>
                     <div class="section-content">
                         <ul class="travel-rec">
+
+                          <% @travels.each do |travel| %>
                             <li>
-                                <a href="旅游详情.html">
-                                    <img src="img/rec_p1.jpg" alt="" class="thumbnail">
-                                    <h3 class="name">泰国曼谷+芭提雅6日5晚跟团游</h3>
+                                <%= link_to travel_parth(travel) do %>
+                                    <img src="/img/rec_p1.jpg" alt="" class="thumbnail">
+                                    <h3 class="name"><%= travel.title %></h3>
                                     <p>
-                                        <span class="city">广州出发</span>
-                                        <span class="price">¥3999.0 起</span>
+                                        <span class="city"><%= travel.departure %>出发</span>
+                                        <span class="price"><%= travel.price %> 起</span>
                                     </p>
-                                </a>
+                                <% end %>
                             </li>
-                            <li>
-                                <a href="旅游详情.html">
-                                    <img src="img/rec_p3.jpg" alt="" class="thumbnail">
-                                    <h3 class="name">美食之旅·泰国曼谷4日3晚跟团游</h3>
-                                    <p>
-                                        <span class="city">北京出发</span>
-                                        <span class="price">¥2999.0 起</span>
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="旅游详情.html">
-                                    <img src="img/rec_p2.jpg" alt="" class="thumbnail">
-                                    <h3 class="name">泰国曼谷+芭提雅6日5晚跟团游</h3>
-                                    <p>
-                                        <span class="city">广州出发</span>
-                                        <span class="price">¥3999.0 起</span>
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="旅游详情.html">
-                                    <img src="img/rec_p4.jpg" alt="" class="thumbnail">
-                                    <h3 class="name">泰国清迈+清莱5日4晚跟团游</h3>
-                                    <p>
-                                        <span class="city">北京出发</span>
-                                        <span class="price">¥2999.0 起</span>
-                                    </p>
-                                </a>
-                            </li>
+                          <% end %>
+
                         </ul>
                     </div>
                 </div>
                 <div class="index-rec">
                     <div class="s-section heading-striped rec-sec">
                         <div class="section-heading">
-                            <h2 class="section-title"><img src="img/thailand_show.png" alt="" class="en"><i class="icon icon-performance"></i>泰国表演</h2>
+                            <h2 class="section-title"><img src="/img/thailand_show.png" alt="" class="en"><i class="icon icon-performance"></i>泰国表演</h2>
                         </div>
                         <div class="section-content">
                             <div class="m-itl">
                                 <div class="image-text">
-                                    <a href="表演详情.html"><img src="img/performance_p111.jpg" alt=""><span class="text">亲子结伴8日包车游清迈</span></a>
+                                  <% if @show1 != nil %>
+                                    <%= link_to show_path(@show1) do %>
+                                      <img src="/img/performance_p111.jpg" alt=""><span class="text"><%= @show1.title %></span>
+                                    <% end %>
+                                  <% end %>
                                 </div>
                                 <ul class="m-list">
-                                    <li><a href="表演详情.html"><i class="icon icon-square"></i>环游安达曼海，邂逅梦之岛</a></li>
-                                    <li><a href="表演详情.html"><i class="icon icon-square"></i>泰安逸，轻奢华——甲米、清迈双城度假游</a></li>
-                                    <li><a href="表演详情.html"><i class="icon icon-square"></i>阳光很晒，时间很慢 | 清迈自由自在漫行记</a></li>
-                                    <li><a href="表演详情.html"><i class="icon icon-square"></i>被遗忘的安达曼海避世天堂</a></li>
+
+                                  <% @shows.each do |show| %>
+                                    <li>
+                                      <%= link_to show_path(show) do %>
+                                        <i class="icon icon-square"></i><%= show.title %>
+                                      <% end %>
+                                    </li>
+                                  <% end %>
+
                                 </ul>
-                                <a href="泰国表演.html" class="look-more"><i class="icon icon-q"></i>查看更多内容...</a>
+                                <a href="shows" class="look-more"><i class="icon icon-q"></i>查看更多内容...</a>
                             </div>
                         </div>
                     </div>
                     <div class="s-section heading-striped rec-sec">
                         <div class="section-heading">
-                            <h2 class="section-title"><img src="img/food_shopping.png" alt="" class="en"><i class="icon icon-shopping"></i>美食购物</h2>
+                            <h2 class="section-title"><img src="/img/food_shopping.png" alt="" class="en"><i class="icon icon-shopping"></i>美食购物</h2>
                         </div>
                         <div class="section-content">
                             <div class="m-itl">
                                 <div class="image-text">
-                                    <a href="购物详情.html"><img src="img/shopping_p111.jpg" alt=""><span class="text">亲子结伴8日包车游清迈</span></a>
+                                  <% if @food1 != nil %>
+                                    <%= link_to food_path(@food1) do %>
+                                      <img src="/img/shopping_p111.jpg" alt=""><span class="text"><%= @food1.title %></span>
+                                    <% end %>
+                                  <% end %>
                                 </div>
                                 <ul class="m-list">
-                                    <li><a href="购物详情.html"><i class="icon icon-square"></i>环游安达曼海，邂逅梦之岛</a></li>
-                                    <li><a href="购物详情.html"><i class="icon icon-square"></i>泰安逸，轻奢华——甲米、清迈双城度假游</a></li>
-                                    <li><a href="购物详情.html"><i class="icon icon-square"></i>阳光很晒，时间很慢 | 清迈自由自在漫行记</a></li>
-                                    <li><a href="购物详情.html"><i class="icon icon-square"></i>被遗忘的安达曼海避世天堂</a></li>
+
+                                  <% @foods.each do |food| %>
+                                    <li>
+                                      <%= link_to food_path(food) do %>
+                                        <i class="icon icon-square"></i><%= food.title %>
+                                      <% end %>
+                                    </li>
+                                  <% end %>
+
                                 </ul>
-                                <a href="美食购物.html" class="look-more"><i class="icon icon-q"></i>查看更多内容...</a>
+                                <a href="foods" class="look-more"><i class="icon icon-q"></i>查看更多内容...</a>
                             </div>
                         </div>
                     </div>
                     <div class="s-section heading-striped rec-sec">
                         <div class="section-heading">
-                            <h2 class="section-title"><img src="img/wonderful_activity.png" alt="" class="en"><i class="icon icon-activity"></i>精彩活动</h2>
+                            <h2 class="section-title"><img src="/img/wonderful_activity.png" alt="" class="en"><i class="icon icon-activity"></i>精彩活动</h2>
                         </div>
                         <div class="section-content">
                             <div class="m-itl">
                                 <div class="image-text">
-                                    <a href="活动详情.html"><img src="img/activity_p111.jpg" alt=""><span class="text">亲子结伴8日包车游清迈</span></a>
+                                  <% if @activity != nil %>
+                                    <%= link_to activity_path(@activity1) do %>
+                                      <img src="/img/activity_p111.jpg" alt=""><span class="text">亲子结伴8日包车游清迈</span>
+                                    <% end %>
+                                  <% end %>
                                 </div>
                                 <ul class="m-list">
-                                    <li><a href="活动详情.html"><i class="icon icon-square"></i>环游安达曼海，邂逅梦之岛</a></li>
-                                    <li><a href="活动详情.html"><i class="icon icon-square"></i>泰安逸，轻奢华——甲米、清迈双城度假游</a></li>
-                                    <li><a href="活动详情.html"><i class="icon icon-square"></i>阳光很晒，时间很慢 | 清迈自由自在漫行记</a></li>
-                                    <li><a href="活动详情.html"><i class="icon icon-square"></i>被遗忘的安达曼海避世天堂</a></li>
+
+                                  <% @activities.each do |activity| %>
+                                  <li>
+                                    <%= link_to activity_path(activity) do %>
+                                      <i class="icon icon-square"></i><%= activity.title %>
+                                    <% end %>
+                                  </li>
+                                  <% end %>
+
                                 </ul>
-                                <a href="精彩活动.html" class="look-more"><i class="icon icon-q"></i>查看更多内容...</a>
+                                <a href="activities" class="look-more"><i class="icon icon-q"></i>查看更多内容...</a>
                             </div>
                         </div>
                     </div>
