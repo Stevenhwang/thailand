@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="topbar">
+        <div class="layout">
+            <div class="pull-right">
+                <div class="hotline"><i class="icon icon-tel"></i>客户服务热线：010-68508888</div>
+                <a href="javascript:;" class="online-service"><i class="icon icon-headset"></i>在线客服</a>
+            </div>
+            <div class="pull-left">
+                <div class="service-purpose">致力于提供来自泰国的最新旅游资讯！您的出游好助手！</div>
+            </div>
+        </div>
+    </div>
+    <div class="header">
+        <div class="layout">
+            <div class="logo"><a href="index"><img src="img/logo.png" alt=""></a></div>
+            <div class="nav">
+                <%= link_to "首页", root_path,  :class => controller.controller_name == "welcome" && controller.action_name == "index" && "active" %>
+
+                <%= link_to "特色旅游", travels_path, :class => controller.controller_name == "travels" && "active"%>
+
+                <%= link_to "高端party", parties_path, :class => controller.controller_name == "parties" && "active" %>
+
+                <%= link_to "泰国表演", shows_path, :class => controller.controller_name == "shows" && "active" %>
+
+                <%= link_to "美食购物", foods_path, :class => controller.controller_name == "foods" && "active" %>
+
+                <%= link_to "精彩活动", activities_path, :class => controller.controller_name == "activities" && "active"%>
+
+                <%= link_to "关于我们", about_path,  :class => controller.controller_name == "welcome" && controller.action_name == "about" && "active" %>
+
+                <%= link_to "联系我们", contact_path, :class => controller.controller_name == "welcome" && controller.action_name == "contact" && "active" %>
+            </div>
+        </div>
+    </div>
