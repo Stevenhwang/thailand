@@ -14,6 +14,15 @@ ActiveAdmin.register Party do
 # end
   permit_params :title, :text, :excerpt
 
+  index do
+    selectable_column
+    id_column
+    column :title
+    column :created_at
+    column :updated_at
+    actions
+  end
+
   form do |f|
     f.inputs "高端Party详情" do
       f.input :title, label: "标题"

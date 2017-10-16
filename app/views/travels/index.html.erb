@@ -19,7 +19,7 @@
                                 <img src="/img/travel_p1.jpg" alt="" class="thumbnail">
                                 <h3 class="name"><%= travel.title %></h3>
                                 <p><i class="icon icon-loc"></i>出发地点：<%= travel.departure %></p>
-                                <p><i class="icon icon-clock"></i>出发日期：04月05日，04月10日，04月15日，04月20日，04月25日，04月30日</p>
+                                <p><i class="icon icon-clock"></i>出发日期：<%= travel.date %></p>
                                 <p class="price">¥<em><%= travel.price %></em></p>
                                 <%= link_to "查看详情", travel_path(travel), :class => "btn btn-primary btn-look" %>
                                 <img src="/img/travel_rec.png" alt="" class="rec">

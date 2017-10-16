@@ -118,9 +118,9 @@
                         <div class="section-content">
                             <div class="m-itl">
                                 <div class="image-text">
-                                  <% if @activity != nil %>
+                                  <% if @activity1 != nil %>
                                     <%= link_to activity_path(@activity1) do %>
-                                      <img src="/img/activity_p111.jpg" alt=""><span class="text">亲子结伴8日包车游清迈</span>
+                                      <img src="/img/activity_p111.jpg" alt=""><span class="text"><%= @activity1.title %></span>
                                     <% end %>
                                   <% end %>
                                 </div>

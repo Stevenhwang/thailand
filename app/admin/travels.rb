@@ -12,12 +12,26 @@ ActiveAdmin.register Travel do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-  permit_params :title, :price, :departure, :destination, :introduction, :notice, :instruction
+  permit_params :title, :price, :date, :departure, :destination, :introduction, :notice, :instruction
+
+  index do
+    selectable_column
+    id_column
+    column :title
+    column :price
+    column :date
+    column :departure
+    column :destination
+    column :created_at
+    column :updated_at
+    actions
+  end
 
   form do |f|
     f.inputs "特色旅游详情" do
       f.input :title, label: "标题"
       f.input :price, label: "价格"
+      f.input :date, label: "出发时间"
       f.input :departure, label: "出发地"
       f.input :destination, label: "目的地"
       f.input :introduction, label: "行程介绍"
