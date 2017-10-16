@@ -16,7 +16,9 @@
                             <div class="travel-overview">
                                 <div class="travel-picture">
                                     <img src="/img/travel_p11.jpg" alt="" class="picture">
-                                    <img src="/img/travel_rec.png" alt="" class="rec">
+                                    <% if @travel.recommend %>
+                                      <img src="/img/travel_rec.png" alt="" class="rec">
+                                    <% end %>
                                 </div>
                                 <div class="travel-itinerary">
                                     <div class="itinerary-info">
