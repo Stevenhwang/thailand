@@ -1,6 +1,6 @@
 class TravelsController < ApplicationController
   def index
-    @travels = Travel.all
+    @travels = Travel.page(params[:page]).per(5)
   end
 
   def show
