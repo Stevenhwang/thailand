@@ -12,7 +12,7 @@ ActiveAdmin.register Show do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-  permit_params :title, :text, :excerpt
+  permit_params :title, :text, :excerpt, {images: []}
 
   index do
     selectable_column
@@ -23,11 +23,12 @@ ActiveAdmin.register Show do
     actions
   end
 
-  form do |f|
+  form html: { multipart: true } do |f|
     f.inputs "泰国表演详情" do
       f.input :title, label: "标题"
       f.input :excerpt, label: "简介"
       f.input :text, label: "内容"
+      f.input :images, label: "图片", as: :file, input_html: { multiple: true }
     end
     f.actions
   end

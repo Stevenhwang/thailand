@@ -12,7 +12,7 @@ ActiveAdmin.register Travel do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-  permit_params :title, :recommend, :price, :date, :departure, :destination, :introduction, :notice, :instruction
+  permit_params :title, :recommend, :price, :date, :departure, :destination, :introduction, :notice, :instruction, {images: []}
 
   index do
     selectable_column
@@ -28,7 +28,7 @@ ActiveAdmin.register Travel do
     actions
   end
 
-  form do |f|
+  form html: { multipart: true } do |f|
     f.inputs "特色旅游详情" do
       f.input :title, label: "标题"
       f.input :recommend, label: "是否推荐"
@@ -39,6 +39,7 @@ ActiveAdmin.register Travel do
       f.input :introduction, label: "行程介绍"
       f.input :notice, label: "预定须知"
       f.input :instruction, label: "签证说明"
+      f.input :images, label: "图片", as: :file, input_html: { multiple: true }
     end
     f.actions
   end

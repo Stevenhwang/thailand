@@ -7,4 +7,7 @@ class Travel < ApplicationRecord
   validates :introduction, presence: true
   validates :notice, presence: true
   validates :instruction, presence: true
+
+  mount_uploaders :images, ImageUploader
+  serialize :images, JSON
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171016083740) do
+ActiveRecord::Schema.define(version: 20171016094957) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20171016083740) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "excerpt"
+    t.string "images"
   end
 
   create_table "admin_users", force: :cascade do |t|
@@ -57,6 +58,7 @@ ActiveRecord::Schema.define(version: 20171016083740) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "excerpt"
+    t.string "images"
   end
 
   create_table "parties", force: :cascade do |t|
@@ -65,6 +67,7 @@ ActiveRecord::Schema.define(version: 20171016083740) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "excerpt"
+    t.string "images"
   end
 
   create_table "shows", force: :cascade do |t|
@@ -73,6 +76,7 @@ ActiveRecord::Schema.define(version: 20171016083740) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "excerpt"
+    t.string "images"
   end
 
   create_table "travels", force: :cascade do |t|
@@ -87,6 +91,7 @@ ActiveRecord::Schema.define(version: 20171016083740) do
     t.string "destination"
     t.string "date"
     t.boolean "recommend"
+    t.string "images"
   end
 
 end
