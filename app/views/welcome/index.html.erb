@@ -41,7 +41,7 @@
                           <% @travels.each do |travel| %>
                             <li>
                                 <%= link_to travel_path(travel) do %>
-                                    <img src="/img/rec_p1.jpg" alt="" class="thumbnail">
+                                    <%= image_tag(travel.images[0].t1.url, alt: "", class: "thumbnail") %>
                                     <h3 class="name"><%= travel.title %></h3>
                                     <p>
                                         <span class="city"><%= travel.departure %>出发</span>
@@ -64,7 +64,7 @@
                                 <div class="image-text">
                                   <% if @show1 != nil %>
                                     <%= link_to show_path(@show1) do %>
-                                      <img src="/img/performance_p111.jpg" alt=""><span class="text"><%= @show1.title %></span>
+                                      <%= image_tag(@show1.images[0].c1.url, alt: "") %><span class="text"><%= @show1.title %></span>
                                     <% end %>
                                   <% end %>
                                 </div>
@@ -92,7 +92,7 @@
                                 <div class="image-text">
                                   <% if @food1 != nil %>
                                     <%= link_to food_path(@food1) do %>
-                                      <img src="/img/shopping_p111.jpg" alt=""><span class="text"><%= @food1.title %></span>
+                                      <%= image_tag(@foo1.images[0].c1.url, alt: "") %><span class="text"><%= @food1.title %></span>
                                     <% end %>
                                   <% end %>
                                 </div>
@@ -120,7 +120,7 @@
                                 <div class="image-text">
                                   <% if @activity1 != nil %>
                                     <%= link_to activity_path(@activity1) do %>
-                                      <img src="/img/activity_p111.jpg" alt=""><span class="text"><%= @activity1.title %></span>
+                                      <%= image_tag(@activity1.images[0].c1.url, alt: "") %><span class="text"><%= @activity1.title %></span>
                                     <% end %>
                                   <% end %>
                                 </div>

@@ -15,7 +15,7 @@
                             <h3 class="travel-title"><%= @travel.title %></h3>
                             <div class="travel-overview">
                                 <div class="travel-picture">
-                                    <img src="/img/travel_p11.jpg" alt="" class="picture">
+                                    <%= image_tag(@travel.images[0].t2.url, alt: "", class: "picture") %>
                                     <% if @travel.recommend %>
                                       <img src="/img/travel_rec.png" alt="" class="rec">
                                     <% end %>

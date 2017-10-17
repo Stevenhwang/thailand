@@ -1,4 +1,16 @@
 "zh-CN":
+  errors:
+    messages:
+      carrierwave_processing_error: "处理图片失败"
+      carrierwave_integrity_error: "不允许的文件类型"
+      carrierwave_download_error: "无法下载"
+      extension_whitelist_error: "不允许上传%{extension}文件, 允许的文件类型: %{allowed_types}"
+      extension_blacklist_error: "不允许上传%{extension}文件, 禁止的文件类型: %{prohibited_types}"
+      content_type_whitelist_error: "不允许上传%{content_type}文件"
+      content_type_blacklist_error: "不允许上传%{content_type}文件"
+      mini_magick_processing_error: "使用MiniMagick处理失败, 也许这不是一张图片? 错误: %{e}"
+      min_size_error: "图片尺寸必须比%{min_size}大"
+      max_size_error: "图片尺寸必须比%{max_size}小"
   views:
     pagination:
       first: "第一页"

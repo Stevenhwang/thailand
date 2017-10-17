@@ -24,8 +24,9 @@
                                 </div>
                             </div>
                             <div class="article-content">
-                                <p><img src="/img/performance_p11.jpg" alt=""></p>
-                                <p><img src="/img/performance_p22.jpg" alt=""></p>
+                                <% @show.images.each do |x| %>
+                                  <p><%= image_tag(x.c3.url, alt: "") %></p>
+                                <% end %>
                                 <p><%= @show.text %></p>
                             </div>
                         </div>

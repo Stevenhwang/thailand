@@ -18,13 +18,13 @@
                             <li>
                                 <h3 class="name"><%= activity.title %></h3>
                                 <div class="info">
-                                    <div class="thumbnail"><img src="/img/activity_p1.jpg" alt=""></div>
+                                    <div class="thumbnail"><%= image_tag(activity.images[0].c2.url, alt: "") %></div>
                                     <p class="intro"><%= activity.excerpt %>...</p>
                                     <%= link_to "查看详情", activity_path(activity), :class => "btn btn-primary btn-look" %>
                                 </div>
                             </li>
 
-                            <% end %>
+                          <% end %>
 
                         </ul>
                         <%= paginate @activities %>

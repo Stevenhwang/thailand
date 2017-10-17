@@ -18,7 +18,7 @@
                             <li>
                                 <h3 class="name"><%= food.title %></h3>
                                 <div class="info">
-                                    <div class="thumbnail"><img src="/img/shopping_p1.jpg" alt=""></div>
+                                    <div class="thumbnail"><%= image_tag(food.images[0].c2.url, alt: "") %></div>
                                     <p class="intro"><%= food.excerpt %>...</p>
                                     <%= link_to "查看详情", food_path(food), :class => "btn btn-primary btn-look" %>
                                 </div>

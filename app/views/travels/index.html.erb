@@ -16,7 +16,7 @@
                           <% @travels.each do |travel| %>
 
                             <li>
-                                <img src="/img/travel_p1.jpg" alt="" class="thumbnail">
+                                <%= image_tag(travel.images[0].t1.url, alt: "", class: "thumbnail") %>
                                 <h3 class="name"><%= travel.title %></h3>
                                 <p><i class="icon icon-loc"></i>出发地点：<%= travel.departure %></p>
                                 <p><i class="icon icon-clock"></i>出发日期：<%= travel.date %></p>

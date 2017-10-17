@@ -18,7 +18,7 @@
                             <li>
                                 <h3 class="name"><%= show.title %></h3>
                                 <div class="info">
-                                    <div class="thumbnail"><img src="/img/performance_p1.jpg" alt=""></div>
+                                    <div class="thumbnail"><%= image_tag(show.images[0].c2.url, alt: "") %></div>
                                     <p class="intro"><%= show.excerpt %>...</p>
                                     <%= link_to "查看详情", show_path(show), :class => "btn btn-primary btn-look" %>
                                 </div>

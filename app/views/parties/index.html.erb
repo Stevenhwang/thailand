@@ -11,15 +11,17 @@
                         <h2 class="section-title"><i class="icon icon-balloon"></i>高端party</h2>
                     </div>
                     <div class="section-content">
-                        <ul class="party-list">
+                        <ul class="m-it-list mt15">
 
                           <% @parties.each do |party| %>
 
                             <li>
-                                <img src="/img/party_p1.jpg" alt="" class="thumbnail">
                                 <h3 class="name"><%= party.title %></h3>
-                                <p class="intro"><%= party.excerpt %>...</p>
-                                <%= link_to "查看详情", party_path(party), :class => "btn btn-primary btn-look" %>
+                                <div class="info">
+                                    <div class="thumbnail"><%= image_tag(party.images[0].c2.url, alt: "") %></div>
+                                    <p class="intro"><%= party.excerpt %>...</p>
+                                    <%= link_to "查看详情", party_path(party), :class => "btn btn-primary btn-look" %>
+                                </div>
                             </li>
 
                           <% end %>

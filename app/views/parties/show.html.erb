@@ -11,24 +11,23 @@
                         <h2 class="section-title"><i class="icon icon-balloon"></i>高端party</h2>
                     </div>
                     <div class="section-content">
-
                         <div class="m-article">
                             <h3 class="article-title"><%= @party.title %></h3>
-                            <div class="article-banner"><img src="/img/party_banner.jpg" alt=""></div>
                             <div class="article-other">
                                 <div class="pull-right article-operation">
                                     <a href="javascript:;" class="article-fav"><i class="icon icon-fav"></i>收藏</a>
                                     <a href="javascript:;" class="article-share"><i class="icon icon-share"></i>分享</a>
                                 </div>
                                 <div class="pull-left article-info">
-                                    <span class="article-date"><i class="icon icon-date"></i><%= @party.created_at.localtime %></span>
+                                    <span class="article-date"><i class="icon icon-pen"></i><%= @party.created_at.localtime %></span>
                                     <span class="article-view"><i class="icon icon-view"></i>3672</span>
                                 </div>
                             </div>
                             <div class="article-content">
-
+                                <% @party.images.each do |x| %>
+                                  <p><%= image_tag(x.c3.url, alt: "") %></p>
+                                <% end %>
                                 <p><%= @party.text %></p>
-
                             </div>
                         </div>
                     </div>
