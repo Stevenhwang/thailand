@@ -7,12 +7,12 @@
             <div class="main">
                 <div class="m-section">
                     <div class="section-heading">
-                        <div class="breadcrumb"><i class="icon icon-home"></i><a href="index">首页</a> &gt; <span>联系我们</span></div>
+                        <div class="breadcrumb"><i class="icon icon-home"></i><a href="/index">首页</a> &gt; <span>联系我们</span></div>
                         <h2 class="section-title"><i class="icon icon-phone"></i>联系我们</h2>
                     </div>
                     <div class="section-content">
                         <div class="contact-us">
-                            <p><img src="/img/contactus_p1.jpg" alt=""></p>
+                        <!--<p><img src="/img/contactus_p1.jpg" alt=""></p>-->
                             <h4>联系方式</h4>
                             <ul class="contact-way">
                                 <li>
@@ -36,26 +36,41 @@
                                     <p><a href="javascript:;">点击咨询</a></p>
                                 </li>
                             </ul>
-                            <h4>提交留言</h4>
-                            <form class="message-form">
+                            <div id="commit"><h4>提交留言</h4></div>
+                            <%= form_for @message, url: {action: "create"}, html: {class: "message-form"} do |f| %>
+
+                              <% if @message.errors.any? %>
+                                <div id = "error_explannation">
+                                  <h2>
+                                    <%= pluralize(@message.errors.count, "个错误") %>
+                                    导致留言失败:
+                                  </h2>
+                                  <ul>
+                                    <% @message.errors.full_messages.each do |msg| %>
+                                      <li><%= msg %></li>
+                                    <% end %>
+                                  </ul>
+                                </div>
+                                <% end %><br>
+
                                 <p>你可以随时通过电话与邮件与我们联系，或把你的留言填写在下方的表格中提交给我们</p>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="您的称呼">
-                                    <input type="text" class="form-control" placeholder="公司名称（选填）">
+                                    <%= f.text_field :name, class: "form-control", placeholder: "您的称呼(Name)(选填)" %>
+                                    <%= f.text_field :company, class: "form-control", placeholder: "公司名称(Company)(选填)" %>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="联系电话">
-                                    <input type="text" class="form-control" placeholder="电子邮箱">
+                                    <%= f.text_field :phone, class: "form-control", placeholder: "联系电话(Phone)(选填)" %>
+                                    <%= f.text_field :email, class: "form-control", placeholder: "电子邮件(Email)(必填)" %>
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="留言信息"></textarea>
+                                    <%= f.text_area :text, class: "form-control", placeholder: "留言信息(Text)(必填)"%>
                                 </div>
                                 <div class="btn-group">
                                     <div class="pull-right">
-                                        <button type="button" class="btn btn-primary">确认提交</button>
+                                        <%= f.submit "确认提交", class: "btn btn-primary"%>
                                     </div>
                                 </div>
-                            </form>
+                            <% end %>
                         </div>
                     </div>
                 </div>

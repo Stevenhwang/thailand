@@ -24,6 +24,7 @@
     parties: "高端Party"
     foods: "美食购物"
     activities: "精彩活动"
+    messages: "客户留言"
     admin_users: "管理员账户"
     dashboard: "控制面板"
     dashboard_welcome:
@@ -56,6 +57,10 @@
         ends_with: "完与"
         greater_than: "大于"
         less_than: "小于"
+        gteq_datetime: "大于等于"
+        lteq_datetime: "小于等于"
+        from: "从"
+        to: "到"
     search_status:
       headline: "搜索条件："
       current_scope: "搜索范围："

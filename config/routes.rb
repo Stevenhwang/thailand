@@ -5,13 +5,15 @@ Rails.application.routes.draw do
 
   get 'index' => 'welcome#index'
   get 'about' => 'welcome#about'
-  get 'contact' => 'welcome#contact'
 
   resources :travels, :only => [:index, :show]
   resources :parties, :only => [:index, :show]
   resources :shows, :only => [:index, :show]
   resources :foods, :only => [:index, :show]
   resources :activities, :only => [:index, :show]
+  resources :messages, :only => [:new, :create]
+
+  get 'messages' => 'messages#new'
 
   root 'welcome#index'
 
