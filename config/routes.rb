@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   resources :shows, :only => [:index, :show]
   resources :foods, :only => [:index, :show]
   resources :activities, :only => [:index, :show]
-  resources :messages, :only => [:new, :create]
 
   get 'messages' => 'messages#new'
+  post 'messages' => 'messages#create'
 
   root 'welcome#index'
 
