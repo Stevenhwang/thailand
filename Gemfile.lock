@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/activeadmin/activeadmin.git
-  revision: 5fce9ec3ceb57ba4eb85c3c3708231c1d572b235
+  revision: 42b73636a20d5af4d63d4e235c39e8e9a5a7bb52
   specs:
     activeadmin (2.0.0.alpha)
       arbre (>= 1.1.1)
@@ -147,7 +147,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_magick (4.8.0)
-    mini_mime (0.1.4)
+    mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
     multi_json (1.12.2)
